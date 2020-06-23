@@ -1,0 +1,27 @@
+body{
+    background-color:teal;
+    background-size: 100%;
+    color:white;
+}
+h1{
+    font-size: 10px;
+    color:tomato;
+}
+p{
+    color:yellow;
+    border:inset 2px violet; 
+    /* border: 선종류 선굵기 선색깔 */
+    /* 선종류 : dotted, dashed,solid,
+    double,groove, ridge, inset,outset, none, hidden  */
+ }
+   .p1{
+    color:blue;
+    font-size:20px ;
+}
+.p2{
+    color:red;
+    font-size: 15;
+}
+#i1{
+    font-size: 40px;
+}
