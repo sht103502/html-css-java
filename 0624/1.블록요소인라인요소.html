@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>블록요소와 인라인요소</title>
+    <style>
+        span {
+            /* span태그에 스타일을 지정한다 */
+        background-color: blueviolet;
+        }
+        .test1 {
+            /* class = tset1 인 것의 스타일을 지정 */
+background-color: blue;
+        }
+        #a1 {
+            /* id =a1 인 것의 스타일을 지정 */
+            background-color: cadetblue;
+        }
+        #t1 {
+            /* id =t1 인 것의 스타일을 지정 */
+            background-color: coral;
+            width: 70%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>블록 요소와 인라인 요소의 기본원리와 규칙</h1>
+    <p>블록요소는 일단 기본적으로 즐바꿈이 일어나는 형태로 
+        <br>영역의 너비가 상위영역의 전체 너비만큼 되는 형태
+        <hr>이 블록 요소에 들어가는 요소는 h1~6, p,div태그 등이 있다.
+        <h2 class="test1">블록요소</h2>
+        <p class="test1">p태크는 블록요소입니다.</p>
+        <div class="test1">div태그도 블록요소입니다.</div>
+    </p>
+    <hr>
+
+    <h2>인라인 요소</h2>
+    <p>인라인요소는 블록요소와 반대되는 형태로 
+        줄바꿈이 일어나지 않는 요소들 입니다.
+        <br>인라인 요소들로는 a, img, strong, span 태그 
+        등이 있습니다.
+    </p>
+
+    <strong> 이요소는 strong 요소입니다</strong>
+    <a id="a1" href="#">링크가 있는 a 요소 역시 인라인 요소입니다.</a>
+    <span>이것은 span 요소입니다.</span>
+    <p id="t1">이것은<span>p태그 안에 span태그</span>입니다</p>
+
+    <hr>
+    <h2>블록 요소의 인라인 요소의 규칙</h2>
+    <ul type="square">
+        <li>대부분의 요소는 같은 형태의 다른 요소를 안에 포함할 수 있다
+            <br>(블록요소 안에 블록요소, 인라인 요소 안에 인라인 요소)
+        </li>
+        <li>대부분의 블로교요소는 다른 인라인 요소를 포함 할 수 있다.</li>
+        <li>하지만, 인라인 요소는 블록 요소를 포함 할 수 없다.</li>
+    </ul>
+
+</body>
+
+</html>

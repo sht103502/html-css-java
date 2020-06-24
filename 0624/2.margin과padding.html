@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>margin과 padding</title>
+    <style>
+        p{
+            background-color: skyblue;
+            border: 3px solid blue;
+        }
+        #first{
+            background-color:steelblue;
+            border: purple;
+            margin: 10px;
+            padding: 0px;
+        }
+        #second{
+            background-color: springgreen;
+            border: 3px solid green;
+            margin: 20px;
+            padding: 20px;
+        }
+        #third{
+            background-color: lemonchiffon;
+            border: 3px solid yellow;
+            margin: 10px 20px 40px;
+            padding: 10px;
+        }
+        #fourth{
+            background-color: lightpink;
+            border: 3px solid red;
+            margin: 10px;
+            padding: 10px 20px 40px;
+        }
+    </style>
+</head>
+<body>
+    <!-- margin은 내부여백, padding은 외부여백 -->
+    <h2>margin :요소와 요소간의 간격, 즉 바깥 여백을 의미</h2>
+    <h2>padding: 요소 안,내부 여백의 의미 </h2>
+    <p>background-color = "skyblue"
+        <br> border : 3px soild blue;
+    </p>
+    <p id="first">margin:10px, padding:0px인 단락</p>
+    <p id="second">margin, padding:20px인 단락</p>
+    <p id="third">margin:10px,20px,40px, padding:20px인 단락</p>
+    <p id="fourth">margin:10px, padding:20px,10px,20px인 단락</p>
+</body>
+</html>

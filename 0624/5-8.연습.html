@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블구조</title>
+    <style>
+        table,
+        tr,
+        td,
+        th {
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+
+        table {
+            width: 600px;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: center;
+        }
+        .c1{
+            background-color: cornflowerblue;
+        }
+        th{
+            background-color: darkkhaki;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <caption>테이블 제목</caption>
+        <tfoot>
+            <tr>
+                <th>tfoot</th>
+                <td colspan="2">평균관객수</td>
+                <td colspan="2">약 16,096,558 명</td>
+            </tr>
+        </tfoot>
+        <thead class="c1">
+            <tr>
+                <th rowspan="2">thead</th>
+                <td colspan="2">영화</td>
+                <td colspan="2">항목</td>
+                
+                >
+                <tr>
+                    <td>제목</td>
+                    <td>감독</td>
+                    <td>관객수</td>
+                    <td >순위</td>
+                
+                </tr>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th rowspan="3">tbody</th>
+                <td>명량</td>
+                <td>김한민</td>
+                <td >17,615,437 명</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>극한직업</td>
+                <td>이병헌</td>
+                <td>16,262,563 명</td>
+                <td >2</td>
+                
+            </tr>
+            <tr>
+                <td>죄와벌</td>
+                <td>김용화</td>
+                <td>14,411,675 명</td>
+                <td >3</td>
+                
+            </tr>
+        </tbody>
+      
+
+    </table>
+</body>
+
+</html>
