@@ -1,0 +1,27 @@
+div{
+    border:3px solid red;
+    
+    overflow: auto;
+
+    height: 50px;
+    /* overflow: scroll;  */
+    /* height 50px 주고 overflow scrool 하면스크롤되는것 */
+    
+}
+.img1{
+    float: right;
+}
+#parent{
+    border: 3px solid blue;
+    overflow: hidden;
+}
+.child{
+    border: 1px solid steelblue;
+    height: 100px;
+    background-color: skyblue;
+    float: left;
+    
+}
+.d1{
+
+}

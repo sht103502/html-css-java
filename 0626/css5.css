@@ -1,0 +1,13 @@
+body{
+    color: red;
+}
+h1{
+    color: rgb(0, 255, 0);
+}
+p.ex{
+color: #0000ff;
+}
+.ex{
+    color: yellow;
+}
+/* p.ex는 p태그안에 클래스 ex인 녀석만 스타일 지정 */

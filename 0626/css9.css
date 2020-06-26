@@ -1,0 +1,38 @@
+div{
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    
+}
+div.static{
+    position: static;
+    background-color: yellow;
+    top: 100px;
+    left: 200px;
+
+}
+div.relative{
+    position: relative;
+    background-color: seagreen;
+    top: 10px;
+    left: 20px;
+    /* 왼쪽으로 20px 떨어지고 위로 부터 10px만큼떨어진다 */
+    /* 기본값 */
+    /* top,left 적용되지 않음 */
+
+}
+div.absolute{
+    position: absolute;
+    border: 1px solid red;
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+}
+div.fixed{
+    position: fixed;
+    background-color: violet;
+    top: 10%;
+    right: 10%;
+}
+

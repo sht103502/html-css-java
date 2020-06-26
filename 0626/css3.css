@@ -1,0 +1,10 @@
+li{
+    color: green;
+}
+#idsel,#idsel2{
+    color: orange;
+}
+.classsel, .classsel2{
+    color: yellow;
+    background-color: teal;
+}

@@ -1,0 +1,18 @@
+a:link{
+    color:red;
+    text-decoration: none;
+    /* text-decoration: none 은 밑줄이 없어짐 ; */
+}
+/* 방문한것은 스카이블루색으로 */
+a:visited{
+    color: skyblue;
+}
+/* 마우스 올려두면 파란색 */
+a:hover{
+    color: blue;
+    text-decoration: underline;
+}
+a:active{
+    color: green;
+    text-decoration: none;
+}

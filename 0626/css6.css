@@ -1,0 +1,15 @@
+li{
+    width: 19%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    float: left;
+    list-style: none;
+}
+
+ul{
+    border-top: 2px solid red;
+    border-bottom: 2px solid red;
+    width: 98%;
+    overflow: hidden;
+}

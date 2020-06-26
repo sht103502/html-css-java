@@ -1,0 +1,16 @@
+ul,ol{
+    color:orange
+}
+/* ul안의 li만 ! */
+ul>li{
+    color: blue;
+}
+.ol1 li{
+color: red;
+}
+/* id가 ol2인 녀셕을 초록색으로 바꾸기 */
+#ol2 li{
+    color: green;
+}
+/* 다른 범위 지정일 경우는 적용o
+    같은 범위 지정일 경우는 적용x */
