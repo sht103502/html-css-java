@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지역변수, 전역변수</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var global=100;
+    //어디서나 쓸 수 있는 '전역변수'
+    function localfocus1(){
+
+    
+    local=200;
+    //함수내에서만 사용 가능한 '지역변수'
+    // console.log(global);
+    // console.log(local);
+///////////////////////////////////    
+    for(var i=0; i<=4; i++){
+        console.log("i : "+ i);
+    }
+    console.log("i(for문 밖) :" +i);
+    }
+    function localfocus2() {
+        
+        console.log(global);//전역변수는 어디서나 호출 가능
+        console.log(local);//호출한 변수는 현재 함수에 없으므로 에러 발생
+    }
+    localfocus1();
+    localfocus2();
+</script>
+</html>

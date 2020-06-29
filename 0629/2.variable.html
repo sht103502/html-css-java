@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js_vaiable</title>
+    <style>
+         #div1{
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">ABC</div>
+</body>
+<script>
+    //데이터타입 : 정수형, 실수형, 문자형, 논리형
+    //정수형: byte, short, int, long
+    // 실수형: float, double
+    // 문자형 : char
+    // 논리형 : boolean
+
+    //var : 자바스크립트에서 모든 변수의 데이터타입을 표현
+    var intNum=11;//int intNum =11;
+    var floatNum=1.1;//float floatNum=1.1;
+    var charA='A';// char charA='A';
+    var stringJS = "JS프레임워크";//String stringJS = "JS프레임워크";
+    var boolean =false;//boolean boolean =false;
+
+    // 자바에서의 출력문 System.Out.println();
+
+    console.log("console에 출력됩니다.");
+    document.write("<br>HTML에 출력됩니다.");
+    document.write("<br>intNum : "+intNum);
+    document.write("<br>floatNum : "+floatNum);
+    document.write("<br>charA : "+charA);
+    document.write("<br>stringJS : "+stringJS);
+    document.write("<br>boolean : "+boolean);
+    
+
+
+    console.log("intNum : "+intNum);
+    console.log("floatNum : "+floatNum);
+    console.log("charA : "+charA);
+    console.log("stringJS : "+stringJS);
+    console.log("boolean : "+boolean);
+    console.log("console출력 완료");
+
+    var obj = document.getElementById("div1");
+    console.log(obj);
+    console.dir(obj);
+    //id = div1의 구조를 보고싶다.
+</script>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dowhile</title>
+</head>
+
+<body>
+    <h1>dowhile</h1>
+    <p id="dowhile1"></p>
+    <br>
+
+</body>
+<script>
+    var text = "";
+    var i = 1;
+    do {
+        text += "The cumber is" + i + "<br>";
+        i++;
+    } while (i <= 10);
+    document.getElementById("dowhile1").innerHTML = text;
+</script>
+
+</html>

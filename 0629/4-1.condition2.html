@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건식(condition)</title>
+    <style>
+        table,
+        tr,
+        td {
+            border: 1px solid black;
+        }
+
+        fieldset {
+            width: 250px;
+            height: 200px;
+        }
+
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <fieldset>
+        <legend>좋아하는계절</legend>
+        <table>
+            <tr>
+                <td>1.봄</td>
+                <td>2.여름</td>
+                <td>3.가을</td>
+                <td>4.겨울</td>
+            </tr>
+        </table>
+        <input type="text" id="season1">
+        <input type="button" value="입력" onClick="input1()">
+        <h1 id="ans"></h1>
+    </fieldset>
+</body>
+<script>
+    //switch문
+    function input1() {
+        var season = document.getElementById("season1").value;
+        console.log("seaseon" + season);
+        switch (season) {
+            case "1":
+                document.getElementById("ans").innerHTML = "봄입니다."
+
+                break;
+
+            case "2":
+                document.getElementById("ans").innerHTML = "여름입니다."
+
+                break;
+
+            case "3":
+                document.getElementById("ans").innerHTML = "가을입니다."
+
+                break;
+
+            case "4":
+                document.getElementById("ans").innerHTML = "겨울입니다."
+
+                break;
+
+            default:
+                document.write("다시입력해주세요.");
+
+        }
+
+    }
+
+
+</script>
+
+</html>

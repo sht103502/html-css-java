@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>break & continue</title>
+</head>
+<body>
+    <h1>BREAK</h1>
+    <p id="break1"></p>
+    <br>
+    <h2>CONTINUE</h2>
+    <p id="continue1"></p>
+</body>
+<script>
+var text="";
+var text2="";
+var i;
+
+for(i=1; i<=10; i++){
+    if(i==6){
+        break;
+    }
+    text += "The number is "+ i +"<br>";
+    //i=1;
+    //"The number is "+ 1 +"<br>";
+    
+    //i=2;
+    //"The number is "+ 1 +"<br>";
+    //"The number is "+ 2 +"<br>";
+
+    //i=3;
+    //"The number is "+ 1 +"<br>";
+    //"The number is "+ 2 +"<br>";
+    //"The number is "+ 3 +"<br>";
+}
+document.getElementById("break1").innerHTML = text;
+for(var i=1; i<=10; i++){
+    if(i%3 ==0){//3,6,9 만빠짐
+        continue;
+    }
+    text2 += "The cumber is" +i +"<br>";
+
+    document.getElementById("continue1").innerHTML =text2;
+}
+</script>
+</html>

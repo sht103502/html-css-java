@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+    <style>
+        fieldset{
+            width: 300px;
+            height: 400px;
+            
+        }
+        div{
+            border:1px solid black;
+            border-radius: 10px;
+            margin: 5px;
+            width: 195px;
+            margin-left: 15%;
+            margin-right: 15%;
+            
+        }
+        input{
+            width: 180px;
+            margin-left: 6px;
+            margin-bottom: 2px;
+            padding: 1px;
+
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+    <legend>계산기</legend>
+    <div>
+    <input type="text" value="" id="a1">
+</div>
+<div>
+    <input type="text" value="" id="a2">
+    
+</div>
+<div>
+    <input type="button"value="sum" onclick="sum()">
+    <input type="button"value="minus" onclick="minus()">
+    <input type="button"value="multi" onclick="multi()">
+    <input type="button"value="divide" onclick="divide()">
+</div>
+<h1 id="ans"></h1>
+</fieldset>
+</body>
+<script>
+    var a;
+    var b;
+    //자바 :method() ,자바스크립트 function()
+    // var a = parseInt(document.getElementById("a1").value);
+    // var b = parseInt(document.getElementById("a2").value);
+    function insert(){
+        a = parseInt(document.getElementById("a1").value);
+        b = parseInt(document.getElementById("a2").value);
+    }
+    function sum(){
+        // document.write(a+b);
+        insert();
+        document.getElementById("ans").innerHTML = a + b;
+    }
+    function minus(){
+        insert();
+        document.getElementById("ans").innerHTML = a - b;
+    }
+    function multi(){
+        insert();
+        document.getElementById("ans").innerHTML = a * b;
+        
+    }
+    function divide(){
+        insert();
+        document.getElementById("ans").innerHTML = a / b;
+        
+    }
+   
+   
+</script>
+</html>

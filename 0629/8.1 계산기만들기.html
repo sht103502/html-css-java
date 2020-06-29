@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기</title>
+    <style>
+        table, 
+        tr,
+        td{
+            border: 1px solid black;
+            text-align: center;
+            width: 30px;
+            padding: 5px;   
+        }
+        input{
+            width: 400px;
+        }
+        .btn{
+            width: 100px;
+        }
+        
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="4">
+                <input type="text"id="number" >
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <input type="text" id="result">
+            </td>
+        </tr>
+       
+        <tr>
+            <td colspan="3"><input type="button"value="AC" onclick="reset()"class="btn" ></td>
+            <td><input type="button"value="/" onclick="add('/')" class="btn"></td>
+        </tr>
+        <tr>
+            
+            <td><input type="button"value="7" onclick="add(7)" class="btn"></td>
+            
+            <td><input type="button"value="8" onclick="add(8)" class="btn"></td>
+            
+           <td> <input type="button"value="9" onclick="add(9)" class="btn"></td>
+            
+            <td><input type="button"value="*" onclick="add('*')" class="btn"></td>
+        </tr>
+        <tr>
+          <td><input type=button value="4" onclick="add(4)" class="btn"> </td>
+          <td><input type=button value="5" onclick="add(5)" class="btn"> </td>
+          <td><input type=button value="6" onclick="add(6)" class="btn"> </td>
+          <td><input type=button value="-" onclick="add('-')" class="btn"> </td>
+        </tr>
+        <tr>
+            <td><input type=button value="1" onclick="add(1)" class="btn"> </td>
+            <td><input type=button value="2" onclick="add(2)" class="btn"> </td>
+            <td><input type=button value="3" onclick="add(3)" class="btn"> </td>
+            <td><input type=button value="+" onclick="add('+')" class="btn"> </td>
+           
+        </tr>
+        <tr>
+            <td colspan="2"><input type=button value="0" onclick="add(0)" class="btn"> </td>
+            <td><input type=button value="." onclick="add('.')" class="btn"> </td>
+            <td><input type=button value="=" onclick="calculate('=')" class="btn"> </td>
+            
+            
+        </tr>
+    </table>
+</body>
+<script>
+    function add(char){
+        var number = document.getElementById("number");
+        number.value = number.value + char;
+    }
+    function calculate(){
+        var number = document.getElementById("number");
+        var result = eval(number.value);
+        document.getElementById("result").value = result;
+    }
+    function reset(){
+        var number = document.getElementById("number");
+        var number = document.getElementById("result");
+        document.getElementById("number").value="";
+        document.getElementById("result").value="";
+    }
+    
+
+</script>
+</html>
