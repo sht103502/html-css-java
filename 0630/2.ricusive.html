@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="jo">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>재귀 호출</title>
+</head>
+<body>
+    <h2 >재귀호출 : 함수 안에서 자신을 다시 호출하는 것</h2>
+    <fieldset>
+        <legend>factorial함수</legend>
+        <input type="text" id="fact" placeholder="숫자를 입력하세요">
+        <input type="button" value="factorial" onclick="factmethod()" >
+        
+        <h3> 입력한 값:<span id="result1"></span></h3>
+        <h3> 결과 값:<span id="result2"></span></h3>
+    </fieldset>
+    
+    
+    <!-- <input type="button"oncilck=btn value="!버튼">
+    <input type="text" id="result"> -->
+</body>
+<script>
+
+    //3입력 하면 3*2*1
+    var result =1;
+    function factorial(num){
+        // var factorial=document.getElementById("num")
+        // factorial.value=num;
+        if(num==0){
+            return result;
+        }else{
+            result =result *num;
+            num--;
+        }
+        return factorial(num);
+
+    }
+   
+   // Q. num 값을 입력받아 factorial 함수를 완성해보자.
+   function factmethod(){
+       var num1= document.getElementById("fact");
+       var num =parseInt(num1.value);
+        
+        //result
+        factorial(num);
+
+        document.getElementById("result1").innerHTML =num;
+        document.getElementById("result2").innerHTML =result;
+        
+        result =1;
+   }
+  
+ 
+</script>
+</html>

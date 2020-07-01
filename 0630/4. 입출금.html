@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object2</title>
+</head>
+<body>
+<fieldset>
+    <legend>훈이네ATM</legend>
+    <input type="text" id="amount">
+    <input type="button"value="입금" onclick="Account.deposit()">
+    
+    <input type="button" value="출금" onclick="Account.withdraw()">
+    <input type="button" value="잔액조회" onclick="Account.toString()">
+    <h2 id="result"></h2>
+</fieldset>
+</body>
+<script>
+    var Account ={};
+    Account.balance =0;
+    
+    var amount=0;
+    function regist(){
+        var amount1 = document.getElementById("amount");
+        if(amount1.value==""){
+            this.amount=0;
+        }else{
+            amount =parseInt(amount1.value);
+        }
+        amount1.value="";
+    }
+    Account.deposit =function(){//예금
+    
+        regist();
+        this.balance += amount;
+        console.log(this.balance);
+        document.getElementById("result").innerHTML=this.balance;
+    }
+    Account.withdraw =function(){//출금
+        regist();
+        if(this.balance >= amount){
+            this.balance -= amount;
+            document.getElementById("result").innerHTML=this.balance;
+        }else{
+            document.getElementById("result").innerHTML="잔액이 부족 합니다.";
+        } 
+    }
+    
+    Account.toString = function(){
+       document.getElementById("result").innerHTML= "잔액 : "+this.balance;
+    }
+   
+</script>
+</html>

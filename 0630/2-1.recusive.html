@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>재귀호출</title>
+</head>
+<body>
+    <fieldset>
+        <legend>2의N승</legend>
+        <input type="text" id="pot" placeholder="숫자를 입력하세요">
+        <input type="button" value="powerOfTwo" onclick="potmethod()" >
+        <h3> 입력한 값:<span id="result1"></span></h3>
+        <h3> 결과 값:<span id="result2"></span></h3>
+    </fieldset>
+    <fieldset>
+        <legend>3의N승</legend>
+        <input type="text" id="pot2" placeholder="숫자를 입력하세요">
+        <input type="button" value="powerOfThree" onclick="potmethod2()" >
+        <h3> 입력한 값:<span id="result3"></span></h3>
+        <h3> 결과 값:<span id="result4"></span></h3>
+    </fieldset>
+</body>
+<script>
+function potmethod(){
+    //1. 입력값 가져오기
+    var num =parseInt(document.getElementById("pot").value);
+    
+    //2. 계산된 값 출력하기
+    document.getElementById("result1").innerHTML=num;
+    document.getElementById("result2").innerHTML=powerOfTwo(num);
+}
+function potmethod2(){
+    //1. 입력값 가져오기
+    var num =parseInt(document.getElementById("pot2").value);
+    
+    //2. 계산된 값 출력하기
+    document.getElementById("result3").innerHTML=num;
+    document.getElementById("result4").innerHTML=powerOfThree(num);
+}
+
+function powerOfTwo(num){
+   
+    if(num==0){
+        return 1;
+    }
+    return 2*powerOfTwo(num-1);
+    }
+ function powerOfThree(num){
+   
+   if(num==0){
+       return 1;
+   }
+   return 3*powerOfThree(num-1);
+   }
+</script>
+</html>
