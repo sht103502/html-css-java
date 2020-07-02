@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>히태리치로또</title>
+    <style>
+        div{
+            border: 10px solid lightpink;
+            width: 70%;
+            height: 800px;
+        }
+        .number {
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            border: 1px solid black;
+            float: left;
+            margin: 2px;
+            text-emphasis: center;
+
+        }
+
+        fieldset {
+
+            width: 450px;
+            background-color: lightgreen;
+        }
+
+        h2 {
+            font-size: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <div>
+            <h2>히태리치로또</h2>
+            <fieldset>
+                <legend>당첨번호</legend>
+                <div class="number"></div>
+                <div class="number"></div>
+                <div class="number"></div>
+                <div class="number"></div>
+                <div class="number"></div>
+                <div class="number"></div>
+                <div class="number"></div>
+                <button id="btn">버튼!</button>
+            </fieldset>
+            
+            <a href="로또페이지.html">복권번호확인하기</a>
+        </div>
+    </center>
+</body>
+<script>
+    var lotto = [0, 0, 0, 0, 0, 0, 0];
+    var i = 0;
+
+    var btn = document.getElementById("btn");
+    var numbers = document.getElementsByClassName("number");
+    // getElementsbyCalssName같은 이름의 클래스를 불러올때 씀
+
+    btn.addEventListener("click", result);
+
+    function result() {
+        if (i > 6) {
+            alert("더이상 넣을 수 없습니다.")
+        } else {
+            lotto[i] = randomRange(1, 45);
+            numbers[i].innerHTML = lotto[i];
+            i++
+        }
+    }
+    function randomRange(min, max) {
+        var rnd = Math.floor(Math.random() * (max - min + 1))
+        //Math.random() :0.0~0.9 
+
+        //중복검사
+        for (var j in lotto) {
+            if (lotto[j] == rnd) {
+                return randomRange(min, max);
+            }
+        }
+        return rnd;
+    }
+
+</script>
+
+</html>

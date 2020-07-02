@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timing</title>
+</head>
+<body>
+    <button onclick="interval()">시작</button>
+    <button onclick="stop()">정지</button>
+    <button onclick="setTime()">3초후 이동창</button>
+    <h1 id="msg"></h1>
+</body>
+<script>
+    var myTime;
+    var x=0;
+    var msg=document.getElementById("msg");
+
+    function interval(){
+        myTime= setInterval(function(){
+            x++;
+            msg.innerHTML =x;
+        }, 1000);
+        //setInterval(function(){},milisecond)
+    }
+    function stop(){
+        x=0;
+        msg.innerHTML =x;
+        //clearInterval(제거할 setInterval)
+    }
+
+    function setTime(){
+        setTimeout(function(){
+           alert("3초가 지났습니다.") 
+           location.href="https:www.daum.net"
+        },3000);
+        // setTime(function(){}, milisecond)
+    }
+
+</script>
+</html>

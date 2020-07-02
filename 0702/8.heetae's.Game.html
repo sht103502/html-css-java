@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        #back {
+            width: 1060px;
+            height: 555px;
+            background-color: lightsalmon;
+        }
+
+        #obj {
+            /* left: 50;
+        top: 50; */
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background-color: lightseagreen;
+        }
+
+        body {
+            display: block;
+            margin: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="back">
+        <div id="obj"></div>
+    </div>
+    <button onclick="left()">◀</button>
+    <button onclick="right()">▶</button>
+    <button onclick="up()">▲</button>
+    <button onclick="down()">▼</button>
+    <button onclick="stop()"onclick="keyboard">■</button>
+    
+</body>
+<script>
+    
+    var obj = document.getElementById("obj");
+    var btn = document.getElementsByTagName("button");
+    var x = 0;
+    var y = 0;
+    var move;
+
+    function left() {
+        stop();
+        var i = 0;
+        if (x <= 0) {
+            alert("이동할 수 없습니다.")
+        } else {
+            move = setInterval(function () {
+                if (i <= 100) {
+                    i++;
+                    x = x - 1;
+                } else {
+                    stop();
+                    i = 0;
+                }
+                obj.style.left = x + "px";
+            }, 10);
+        }
+    }
+    function right() {
+        stop();
+        var i = 0;
+
+        if (x >= 1000) {
+            alert("이동할 수없습니다.")
+        } else {
+            move = setInterval(function () {
+                if (i <= 100) {
+                    i++;
+                    x = x + 1;
+                } else {
+                    stop();
+                    i = 1000;
+                }
+                obj.style.left = x + "px";
+            }, 10);
+        }
+    }
+    function up() {
+        stop();
+        var i = 0;
+        if (y <= 0) {
+            alert("이동할 수 없습니다.");
+        } else {
+            move = setInterval(function () {
+                if (i <= 100) {
+                    i++;
+                    y = y - 1;
+                } else {
+                    stop();
+                    i = 0;
+                }
+                obj.style.top = y + "px";
+            }, 10);
+        }
+    }
+    function down() {
+        stop();
+        var i = 0;
+        if (y >= 500) {
+            alert("이동할 수 없습니다.");
+        } else {
+            move = setInterval(function () {
+                if (i <= 100) {
+                    i++;
+                    y = y + 1;
+                } else {
+                    stop();
+                    i = 0;
+                }
+                obj.style.top = y + "px";
+            }, 10);
+        }
+    }
+
+    function stop() {
+        clearInterval(move);
+        btn[0].disabled =false;
+        btn[1].disabled =false;
+        btn[2].disabled =false;
+        btn[3].disabled =false;
+        btn[4].disabled =false;
+
+    }
+
+
+</script>
+
+</html>

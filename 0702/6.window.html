@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window</title>
+</head>
+<body>
+    <!-- <p id="info"></p> -->
+    <button>창열기</button>
+    <button>창닫기</button>
+    <button>창크기 변경</button>
+    <button>창크기 고정</button>
+</body>
+<script>
+    var btn =document.getElementsByTagName("button");
+    var mywindow;
+
+    btn[0].addEventListener("click",function(){
+        mywindow=window.open("","mywindow","width=300 height=300")
+        // window.open("URL","TITLE")
+    });
+    btn[1].addEventListener("click",function(){
+        mywindow.close();
+    });
+    btn[2].addEventListener("click",function(){
+        mywindow.resizeBy(100,100);
+        mywindow.focus();
+    });
+    btn[3].addEventListener("click",function(){
+        mywindow.resizeTo(400, 400);
+        mywindow.focus();
+    });
+</script>
+</html>

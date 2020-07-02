@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+<style>
+    div{
+        width: 250px;
+        height: 250px;
+        background-color: lightpink;
+    }
+    fieldset{
+        margin-bottom: 20px;
+    }
+</style>
+</head>
+<body onload="alert('로딩완료')">
+    <div id="mouse" onmouseover="mouseEvent('over')"
+                    onmouseout="mouseEvent('out')"
+                    ></div>
+      <br/>
+      <fieldset>
+          <legend>오늘의 날짜</legend>
+          <h3 id="now"></h3>
+          <button onclick="getDay()">현재시간</button>
+      </fieldset>
+      <fieldset>
+          <h2 id="typing"></h2>
+          <input id="keyon" type="text" onkeydown="going()" onkeyup="ggoing()">
+            <select id="mySel" onchange="funSel()">
+                <option>아우디</option>
+                <option>벤츠</option>
+                <option>포르쉐</option>
+                <option>재규어</option>
+            </select>
+        </fieldset>
+      <fieldset>
+          <h2 id="typ1"></h2>
+          <input type="text" id="typ2" onchange="change()">
+      </fieldset>
+</body>
+<script>
+    function mouseEvent(evt){
+        if(evt=='over'){
+            document.getElementById("mouse").innerHTML ="mouse over!!";
+        }
+        if(evt=='out'){
+            document.getElementById("mouse").innerHTML="mouse out!!";
+        }
+        
+        
+    }
+    //날짜 출력
+    function getDay(){
+        document.getElementById("now").innerHTML=Date();
+    }
+    function going(){
+        document.getElementById("typing").innerHTML="key down!!";
+    }
+    function ggoing(){
+        document.getElementById("typing").innerHTML="key up!!"
+        var msg = document.getElementById("keyon").value;
+        document.getElementById("typing").innerHTML=msg;
+    }
+    function funSel(){
+        var car = document.getElementById("mySel").value;
+        document.getElementById("typing").innerHTML= car;
+    }
+    function change(){
+        var msg =document.getElementById("typ2").value;
+        document.getElementById("typ1").innerHTML =msg;
+    }
+
+    /*
+        (1) onload : 브라우저가 모든 페이지를 로딩한 후 실행
+        (2) onmouseover : 마우스가 영역 위로 올라왔을 경우 실행
+        (3) onmouseout : 마우스가 영역 밖으로 벗어났을 경우 실행
+        (4) onclick :마우스를 클릭시 실행
+        (5) onKeyon : 키를 눌렀을때
+        (6) onKeyUp : 눌린 키가 떨어졌을때
+        (7)on change : 문서에 변경이 있을 경우 작동
+    */
+</script>
+</html>

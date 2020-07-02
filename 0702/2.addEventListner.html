@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addEventListner</title>
+</head>
+<body>
+    <h3 id="msg">FOCUS NULL</h3>
+    <input type="text" id="textinput">
+</body>
+
+<script>
+    /*
+        <input type="text" id ="textinput"  focusin ="fcsin()" focusout= "fcsout()">
+        addEnentListner : event 를 깔끔하게 작업
+        document.addEventLisner(event, function)
+    
+    */
+    var txt =document.getElementById("textinput");
+
+    txt.addEventListener("focusin",fcsin);
+    txt.addEventListener("focusout",fcsout);
+
+    function fcsin(){
+        document.getElementById("msg").innerHTML="FOCUS IN";
+        txt.style.backgroundColor ="lightblue";
+    }
+    function fcsout(){
+        document.getElementById("msg").innerHTML="FOCUS OUT";
+        txt.style.backgroundColor ="lightpink";
+    }
+
+</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>화면크기 확인</title>
+</head>
+<body>
+    <h2 id="winSize"></h2>
+    <h2 id="screenSize"></h2>
+    <h2 id="availSize"></h2>
+</body>
+<script>
+    var ww= window.innerWidth;
+    var wh=window.innerHeight;
+
+    var sw=screen.width;
+    var sh=screen.height;
+
+    var aw=screen.availWidth;
+    var ah=screen.availHeight;
+
+    var h2=document.getElementsByTagName("h2");
+    h2[0].innerHTML="브라우저 사이즈 :"+ww+" x "+wh;
+    h2[1].innerHTML="모니터 사이즈 :"+sw+" x "+sh;
+    h2[2].innerHTML="모니터(작업표시줄 제외)"+aw +" x "+ah;
+
+</script>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addEventListner 실습</title>
+<style>
+    div{
+        width: 650px;
+        height: 650px;
+        background-color: green;
+        /*가로세로*/
+        text-align: center; 
+        /*위아래*/
+        line-height: 650px;
+        font-size: 50px;
+    }   
+</style>
+</head>
+<body>
+    <div id="clickzone">
+    </div>
+    <h2>mouse position : <span id="pos"></span></h2>
+    <h2>mouse position : <span id="pos1"></span></h2>
+    
+</body>
+<script>
+    
+    var abc =document.getElementById("clickzone");
+
+    abc. addEventListener("mouseenter",etr);
+    abc. addEventListener("mouseout",out);
+    abc. addEventListener("click",clk);
+    abc. addEventListener("dblclick",dc);
+    function etr(){
+        document.getElementById("clickzone").innerHTML="mouse enter";
+        abc.style.backgroundColor = "lightblue";
+    }
+    function out(){
+        document.getElementById("clickzone").innerHTML="mouse out";
+        abc.style.backgroundColor ="lightgreen";
+    }
+    function clk(){
+        document.getElementById("clickzone").innerHTML="mouse click";
+        abc.style.backgroundColor ="red";
+    }
+    function dc(){
+        document.getElementById("clickzone").innerHTML="mouse doubleclick";
+        abc.style.backgroundColor ="yellow";
+    }
+    document.addEventListener("mousemove",mMove);
+    function mMove(move){
+        //screenX 모니터 기준, clientX :브라우저 기준
+        document.getElementById("pos").innerHTML =
+        "모니터 (screen)X :"+move.screenX+" / Y :"+move.screenY;
+
+        document.getElementById("pos1").innerHTML =
+        "브라우저(client)X :"+move.clientX+" / Y :"+move.clientY;
+    }
+    
+</script>
+</html>
