@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Element(HTML object)의 Name 활용</title>
+    <!-- 2. script layer -->
+    <script>
+        function score() {
+            var kor = document.getElementsByName("kor");
+            var tot = parseInt(kor[0].value) + parseInt(kor[1].value)
+                + parseInt(kor[2].value);
+            var avg = tot / 3;
+            alert(avg);
+        }
+    </script>
+</head>
+
+<body>
+    <!-- 1. html object -->
+    <h1>SCORE TABLE</h1>
+    <input type="text" name="kor" placeholder="1번학생 국어점수" />
+    <input type="text" name="kor" placeholder="2번학생 국어점수" />
+    <input type="text" name="kor" placeholder="3번학생 국어점수" />
+
+    <button onClick="score()">성적계산</button>
+    <br/>
+    <input type="text" name="tot" placeholder="총점">
+    <input type="text" name="avg" placeholder="평균">
+
+</body>
+<script>
+    function score(){
+        var arrkor =document.getElementsByName("kor");
+        //arrkor typeof 타입확인해보기
+
+        var tot =parseInt(arrkor[0].value)
+                   +parseInt(arrkor[1].value)
+                   +parseInt(arrkor[2].value);
+        
+        var avg=tot/3;
+
+        var sum =document.getElementsByName("tot");
+        var average = document.getElementsByName("avg");
+
+        //console.log로 sum, average 확인하기
+        sum[0].value =tot;
+        average[0].value =avg;
+        console.log(tot);
+        console.log(avg);
+    }   
+</script>
+</html>

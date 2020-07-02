@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ICIA :: HEETAE :: 신희태</h1>
+    <input type="text" id="userName" />
+    <input type="text" id="userAge" />
+    <button onclick="catchText()" onmouseover="catchAge()">눌러봐~!</button>
+    <br>
+    <hr>
+
+</body>
+<script>
+    function catchText(){
+        alert(document.getElementById("userName").value);
+    }
+    function catchAge(){
+        alert(document.getElementById("userAge").value);
+    }
+</script>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    h1, input{
+        text-align: center;
+    }
+    .info{
+        width: 100px;
+        height: 30px;
+        margin: 10px;
+        font-size: 10px;
+    }
+    .btn{
+        width: 270px;
+        height: 27px;
+        margin: 0px;
+    }
+</style>
+</head>
+<body>
+    <h1>학생별 과목 점수 입력</h1>
+    <input type="text" name="stu" class="info" placeholder="학생성명"/>
+    <input type="text" name="kor" class="info" placeholder="국어점수"/>
+    <input type="text" name="eng" class="info" placeholder="영어점수"/>
+    <input type="text" name="mat" class="info" placeholder="수학점수"/>
+    
+    <button class="btn" onclick="input()">성적입력</button>
+    <hr/>
+
+    <input type="text" class="info" placeholder="학생번호" />
+    <input type="text" class="info" placeholder="학생성명" />
+    <input type="text" class="info" placeholder="국어점수" />
+    <input type="text" class="info" placeholder="영어점수" />
+    <input type="text" class="info" placeholder="수학점수" />
+    <input type="text" class="info" placeholder="과목총점" />
+    <input type="text" class="info" placeholder="과목평균" />
+    <br/>
+
+</body>
+<script>
+    var num=0;
+    function input(){
+        //HTMl Object connect
+        var jStu =document.getElementsByName("stu")[0];
+		var jKor = document.getElementsByName("kor")[0];
+		var jEng = document.getElementsByName("eng")[0];
+		var jMat = document.getElementsByName("mat")[0];
+        
+        //2.총점, 평균 연산
+        //함수내 생성된 지역변수는 다른 함수에서 참조 불가능
+        //파라미터를 이용해 필요한 함수에 전달
+
+        var tot =calSum(parseInt(jKor.value),parseInt(jEng.value),parseInt(jMat.value));
+        var avg =calAvg(tot);
+
+        //3.학생별 성적정보를 표시할 HTML Object만들기
+        //4.값 표시하기
+        //4-1.순번 증가시키기
+        num = num + 1;
+        createObject("input","text","number",num);
+        createObject("input","text","stu",jStu.value);
+        createObject("input","text","kor",jKor.value);
+        createObject("input","text","eng",jEng.value);
+        createObject("input","text","mat",jMat.value);
+        createObject("input","text","tot",tot);
+        createObject("input","text","avg",avg);
+        createObject("br");
+
+        //입력창 초기화
+        clearValue(jStu);
+        clearValue(jKor);
+        clearValue(jEng);
+        clearValue(jMat);
+
+        //2-1. 총점 연산
+        function calSum(jKor, jEng, jMat){
+            return (jKor + jEng + jMat);
+        }
+
+        //2-2.평균연산
+        function calAvg(tot){
+            return tot/3;
+        }   
+        //3-1. HTML Object생성
+        function createObject(tagName, type, name, value){
+            var obj =document.createElement(tagName);
+            obj.type=type;
+            obj.name=name;
+            obj.value= value;
+            obj.className ="info";
+
+            //Object HTML에출력
+            document.body.appendChild(obj);
+
+       }
+       //4-2.입력창 초기화
+       function clearValue(obj){
+           obj.value ="";
+       }        
+
+
+    }
+
+</script>
+</html>

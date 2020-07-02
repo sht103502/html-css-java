@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arrmethod</title>
+</head>
+<body>
+    <fieldset>
+        <button onclick="JoinEx()">Join</button>
+        <button onclick="splitEx()">split</button>
+    </fieldset>
+    
+    <fieldset>
+        <button onclick="delEx()">Delete</button>
+        <button onclick="spliceDel()">spliceDel</button>
+        <button onclick="spliceAdd()">spliceADD</button>
+    </fieldset>
+    
+    <fieldset>
+        <button onclick="sortEx()">정렬</button>
+        <button onclick="reverseEx()">역정렬</button>
+        <button onclick="numberSort()">숫자정렬</button>
+        <button onclick="numberReverse()">숫자역정렬</button>
+    </fieldset>
+    <fieldset>
+        <button onclick="sliceEx()">배열 나누기</button>
+        <button onclick="concatEx()">배열 합치기</button>
+        <input type="text" id="txt">
+        <button onclick="selDel()">특정배열 삭제</button>
+    </fieldset>
+
+    
+</body>
+
+<script>
+
+    var array = ["마","가","다","바","나","라"];
+     
+
+
+    // join
+    function JoinEx(){
+        // var arrJoin = ["A","B","C","D","E"];
+        // console.log(arrJoin.join("@"));
+        text4=splitEx().join(" ");
+        console.log("출력되는 부분");
+        console.log(text4);
+    }
+
+    //delEx
+    function delEx(){
+        delete array[2];
+        console.log("array[2]삭제 : ");
+        console.log(array);
+
+        array[2]="new";
+        console.log("array[2]에 new 추가 : ");
+        console.log(array);
+
+    }
+
+    function spliceDel(){
+        console.log(array);
+        //1번 인덱스부터 n개 삭제
+        //배열명.splice(i,n);
+        array.splice(2,2);
+        console.log(array);
+    }
+
+    function spliceAdd(){
+        console.log(array);
+        //i번 인덱스부터 n개 삭제하고 m개 대체
+        //배열명.splice(i,n,"m1","m2");
+        
+        array.splice(1,3,"하","지","마");
+        array.splice(1,0,"지","각");
+        console.log(array);
+
+    }
+
+    //split
+    var text3 = "비도 오고 그래서 니 생각이 났어";
+    function splitEx(){
+        var words = text3.split(" ");
+        // 공백을 기준으로 잘라 배열에 담는다.
+
+        for(var i in words){
+            console.log("[" + i + "]" + words[i]);
+        }
+        return words;
+    }
+    //var array =["마","가","다","바","나","라"];
+
+    //정렬 sort
+    function sortEx(){
+        array.sort();
+        console.log(array);
+    }
+    //역정렬 reverse
+    function reverseEx(){
+        array.reverse();
+        console.log(array);
+    }
+    //var number=[4,9,2,1,7,4,3];
+    var numbers=[4,9,2,1,7,4,3];
+    
+    function numberSort(){
+        numbers.sort(function(a,b){return a-b});
+        console.log(numbers);
+    }
+    function numberReverse(){
+        numbers.reverse(function(a,b){return b-a});
+        //역정렬 방법
+        //return b-a
+        //sort 대신 reverse
+
+        //function (a-b){
+        //     return a-b;
+        // }
+        // function (4,9){
+        //     return 4 - 9;
+        // }
+        // return 값이 0보다 작을 경우
+        // a를 b보다 작은 색인으로 정력
+        // 즉, a가 먼저 출력
+
+        // a =4, b=4 
+        // return 값이 0일 경우
+        // a와 b의 순서를 변경하지 않는다.경우
+        
+        // a=9, b=4
+        // return 값이 0보다 큰 경우
+        // b를 a보다 작은 색인으로 정렬
+        // 즉, b가 먼저 출력
+        
+        console.log(numbers);
+    }
+
+    var arr1=[1,2,3,4,5];
+    var arr2 =['a','b','c','d','e'];
+    //배열나누기
+    function sliceEx(){
+        var newArr1 =arr1.slice(1,4);
+        var newArr2 =arr2.slice(2,5);
+        //배역명.slice(i,j);
+        //인덱스 i번째 부터 보여주고 
+        //인덱스 j번째 부터 잘라냄
+        console.log(newArr1);
+        console.log(newArr2);
+    }
+    //배열 합치기
+    function concatEx(){
+        var newArr =arr1.concat(arr2);
+        console.log(newArr);
+    }
+    //array, arr1, arr2 배열 사용
+
+    //출력 값
+    //["바","마","라","다","나","가",5,4,3,2,1,'e','d']
+    //3개의 문자 구성
+    function concatEx(){
+        var cArray =array.reverse(array.sort());
+        var cArr1 =arr1.sort(function(a,b){return(b-a)});
+        var vArr2 =arr2.reverse(arr2.sort());
+
+        var newArr =cArray.concat(cArr1, vArr2);
+        console.log(newArr);
+    }
+
+    //특정 배열 삭제
+    //arr1 =[1,2,3,4,5];
+    function selDel(){
+        var text1=document.getElementById("txt").value;
+        var text2 = parseInt(text1);
+        var index =arr1.indexOf(text2);
+
+        console.log("index : "+ index);
+        if(index >-1){
+            arr1.splice(index,1);
+        }else{
+            console.log("입력한 값이 없습니다.")
+        }
+        console.log(arr1);
+    }
+</script>
+
+</html>

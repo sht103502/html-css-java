@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array 배열</title>
+</head>
+<body>
+    
+</body>
+<script>
+//배열선언 방법1
+var arrNUM =[];
+console.log(typeof arrNUM);
+//배열선언 방법2
+var arrString =new Array();
+console.log(typeof arrString);
+
+arrNLM =[1,2,3,4];
+arrString =["A","B","C","D"];
+
+console.log(arrNUM);
+console.log(arrString);
+
+//Push 를 통해 배열값 추가하기
+arrNUM.push(5);
+arrString.push();
+
+console.log(arrNUM);
+console.log(arrString);
+
+//length 를 이용한 배열크기 확인
+console.log(arrNUM.length);
+console.log(arrString.length);
+
+//isArray를 사용한 배열확인 여부
+console.log("arrNUM은 배열인가?" + Array.isArray(arrNUM));
+console.log("arrString은 배열인가?" + Array.isArray(arrString));
+var arrINT = 4;
+console.log("arrayINT는 배열인가?" + Array.isArray(arrINT));
+
+</script>
+</html>
