@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글자색 변경하기</title>
+</head>
+<body>
+    <h1 id="elem" >글자 색상이 변경 된다.</h1>
+    <button id="btn" >색상 변경</button>
+    
+</body>
+<script>
+    var elem = document.getElementById("elem");
+    var btn =document.getElementById("btn");
+    
+
+    var fColor =["red","orange","yellow","green",
+                 "blue","navy","purple"];
+    var i = -1;
+    
+    // -1 인 이유는 indew 0번인 red 부터 시작하기 위해 -1을 해주고 i++을 해주면 index 0이 되기때문에 
+    //red 부터 시작한다.
+    
+   
+    btn.addEventListener("click",function(){
+        setInterval(function(){
+        i++;
+        if(i==fColor.length){
+            i=0;
+        }
+        elem.style.color =fColor[i];
+        },100)
+    });
+    
+    
+</script>
+</html>

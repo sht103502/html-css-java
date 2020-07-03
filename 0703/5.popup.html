@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" onclick="popup() "value="alert">
+    <input type="button" onclick="conf() "value="confirm">
+    <input type="button" onclick="promp() "value="prompt">
+</body>
+<script>
+    function popup(){
+        alert("경고창입니다.")
+    }
+    function conf(){
+        var con =confirm("정말로 삭제할꺼야?")
+        if(con==true){
+            alert("삭제 T^T")
+        }else{
+            alert("고마^오^")
+        }
+    }
+    function promp(){
+        var stuname =prompt("당신의 이름은?");
+
+        if(stuname==""|| stuname==null ||stuname==" "){
+            alert("이름을 입력해 주세요~!")
+        }else{
+            alert(stuname +"님 반가워~")
+        }
+    }
+</script>
+</html>

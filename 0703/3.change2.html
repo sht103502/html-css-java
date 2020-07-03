@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    #image{
+        width:200px ;
+        height: 200px;
+    }
+</style>
+</head>
+
+<body>
+    <h1 id="elem"></h1>
+    <button id="btn1">텍스트 표시</button><br />
+    <button id="btn2">이미지 변경</button><br />
+    <img id="image" src=""><br />
+    
+
+</body>
+<script>
+
+    var elem = document.getElementById("elem");
+    var btn1 = document.getElementById("btn1");
+
+    
+  
+    var txt=["안","녕","나","는","신"
+    ,"희","태","야"
+    ,"^","~","^"];
+    var save = "";
+    var j=0;
+  
+    btn1.addEventListener("click", function () {
+        
+        
+        if (j == txt.length) {
+            save = "";
+            j = 0;
+        } else {
+            save += txt[j];
+            elem.innerHTML = save;
+            j++;
+        }
+
+        // if (j == txt.length) {
+        //     j = 0;
+        // }
+        // console.log("txt_j : " + j);
+    });
+    //이미지 변경
+
+    var image = document.getElementById("image");
+    var btn2 = document.getElementById("btn2");
+
+    var img = ["베스파.jpg", "슈퍼커브.jpg"];
+    var i = -1;
+    btn2.addEventListener("click", function () {
+
+        i++;
+        if (i == img.length) {
+            i = 0;
+        }
+        image.src = img[i];
+        console.log("img_i : " + i);
+    });
+
+</script>
+
+</html>

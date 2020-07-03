@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>today</title>
+</head>
+<body>
+    <button onclick="today1()">눌러봐!</button>
+    <button onclick="current1()">눌러봐2!</button>
+    <h1 id="txt"></h1>
+</body>
+<script>
+    // var today = new 
+    function today1(){
+        var myDate = new Date();
+        document.write(myDate);
+        //년
+        var yy=myDate.getFullYear();
+        //월
+        var mm=myDate.getMonth();
+        //일 
+        var dd=myDate.getDate();
+        //요일
+        var day=myDate.getDay();
+        var days =["일","월","화","수","목","금","토"];
+        // days라는 Array를 만들어 원하는 요일(금요일)을 나오게 할것이다.
+        
+        document.write(yy +"년"+ mm+"월"+ dd+"일"+days[5]+"요일")
+    }
+    function current1(){
+        var myDate = new Date();
+        //시
+        var h =myDate.getHours();
+        //분
+        var m =myDate.getMinutes();
+        //초
+        var s =myDate.getSeconds();
+        // h,m,s을 재설정한다
+        
+        h = checkTime(h);
+        m = checkTime(m);
+        s = checkTime(s);
+        
+        document.getElementById("txt").innerHTML= h +":" + m +":"+ s;
+        var t = setTimeout(current1, 500);
+    }
+    // 체크타임도 재설정
+    function checkTime(i){
+        if(i< 10){
+            i = "0" + i
+        };
+        return i;
+    }
+</script>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>당신이 입력한값: <span id="msg1"></span></h1>
+       <br/>
+    <input type="text" onkeyup=keyEvt()><span id="msg2">(0자 입력)</span> 
+</body>
+<script>
+    var txt = document.getElementsByTagName("input");
+    var msg = document.getElementsByTagName("span");
+
+    // var text1 = document.getElementById("text1");
+    // var text2 = document.getElementById("text2");
+    
+
+    function keyEvt(){
+        var val =txt[0].value;
+        console.log("val :"+ val);
+
+        if(val.length >= 0 && val.length<5){
+            msg[1].style.color="black";
+        }else if(val.length >= 5 && val.length<10){
+            msg[1].style.color ="orange";
+        }else{
+            alert("더이상 입력 불가.")
+            msg[1].style.color ="red";
+             val=val.slice(0,10);
+            // 0번 부터 보여주고 10번부터 잘라낸다.
+            txt[0].value =val;
+        }
+        msg[0].innerHTML=val;
+        msg[1].innerHTML="(" +val.length +"자입력)"; 
+    }
+</script>
+</html>
