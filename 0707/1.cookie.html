@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>ID:</td>
+            <td><input type="text"id="userID"/> </td>
+        </tr>
+        <tr>
+            <td>PW:</td>
+            <td><input type="password" id="userPW"/></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+            <button id="setCookie">쿠키 생성</button>
+            <button id="getCookie">쿠키 확인</button>
+            <button id="delCookie">쿠키 삭제</button>
+            </td>
+        </tr>
+        
+    </table>
+</body>
+<script>
+    //Cookie : 인터넷 웹페이지의 저장소, 웹페이지의 사용흔적
+    //헨젤과 그레텔에서 지나온 길을 표시하기 이해
+    //쿠키 조각을 떨어뜨리며 표시했다는 것에서 유래
+   
+    //요소가져오기
+    var id =document.getElementById("userID");
+    var pw = document.getElementById("userPW");
+    var setC =document.getElementById("setCookie");
+    var getC=document.getElementById("getCookie");
+    var delC =document.getElementById("delCookie");
+    var coo;
+
+    //쿠키초기화
+    delCookie();
+
+
+    //setCookie
+    setC.addEventListener("click",setCookie);
+
+    function setCookie(){
+        var userId =id.value;
+        var userPw =pw.value;
+
+        //아이디 패스워드 확인
+        console.log("userId :"+userId + ",userPw :"+userPw);
+
+        //쿠키 만들기
+        //document.cookie ="쿠키에 입력할 내용; expires = 쿠키 만료 일시"
+
+        //만료 날짜 만들기
+        var expire =new Date();
+
+        //expire.setDate(expire.getDate() +1);
+        //expire.setDate(expire.setTime() +(10*1000)) =>>10초
+        expire.setTime(expire.getTime()+(60*60*1000));
+
+        
+        coo=document.cookie="id ="+userId+"; pw="+userPw+"; expires="+expire.toString()+ ";";
+        console.log(coo);
+    }
+
+    //getCookie
+    getC.addEventListener("click",getCookie);
+    function getCookie(){
+        var cookieArr =coo.split(";");
+        //";" 기준으로 coo 값을 나눈 후 배열에 삽입
+        var cValue =[];
+
+        for(var i in cookieArr){
+            var val =cookieArr[i].split("=");
+            //쿠키의 개별 항복  값을 "=" 단위로 나눈다.
+
+            cValue.push(val[1]);
+            //Q.val[1]이 무엇인가?
+            //val[0] = ["id","pw","expires"];
+            //val[1] = ["입력한 id","입력한 비밀번호","만료시간"] 
+
+        }
+        //불필요한 공백을 삭제한다.
+        cValue.pop();
+        console.log(cValue);
+
+            
+        if(cValue[0]=="admin" && cValue[1]=="admin"){
+            alert("관리자로 로그인 했습니다.");
+        }else if(cValue[0]=="shin321" && cValue[1]=="1234"){
+            alert(cValue[0]+"님 환영합니다.");
+            check();
+            // location.href="http://www.naver.com";
+        }else{
+            alert("아이디와 비밀번호를 확인해주세요");
+        }
+    }
+
+    //delCookie
+    delC.addEventListener("click",delCookie);
+    function delCookie(){
+        coo = "id=; pw=; expires=;";
+        
+    }
+    //function clearvalue(obj){
+    //     obj.value="";
+    // }
+
+    function  conf(){
+        var con =confirm("로그인을 유지하시겠습니까?");
+        if(con==true){
+            alert("로그인이 유지됩니다.")
+            check();
+        }else{
+            alert("로그아웃")
+            delCookie();
+
+        }
+    }
+    function check(){
+        setTimeout(function(){
+            conf();
+        },3000);
+    }
+    
+
+</script>
+</html>
