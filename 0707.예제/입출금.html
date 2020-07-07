@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object2</title>
+    <!-- <link rel="stylesheet" href="" type="text/css"> -->
+    <link rel="stylesheet" href="스타일.css">
+    <link rel="stylesheet" href="안녕2.css">
+</head>
+
+<body>
+    <nav class="menu">
+        <ol>
+            <li class="menu"><a href="메인페이지.html">홈</a></li>
+            <li class="menu"><a href="3.html">로그인</a></li>
+            <li class="menu"><a href="4.html">회원기능</a></li>
+            <li class="menu"><a href="입출금.html">입출금</a></li>
+        </ol>
+    </nav>
+    <div>
+        <fieldset>
+            <legend><mark>오구의 ATM</mark></legend>
+            <input type="text" id="amount" placeholder="금액을 입력하세요.">
+            <input type="text" id="accountnumber" placeholder="계좌번호를 입력하세요.">
+            <input type="button" value="입금" onclick="Account.deposit()"class="name">
+            <input type="button" value="출금" onclick="Account.withdraw()"class="name">
+            <input type="button" value="잔액조회" onclick="Account.toString()"class="name">
+            <h2 id="result"></h2>
+            <img id="image1" src="">
+            
+        </fieldset>
+    </div>
+</body>
+<script>
+    var Account = {};
+    Account.balance = 0;
+    Account.number = "12345";
+
+    var amount = 0;
+    function regist() {
+        var amount1 = document.getElementById("amount");
+        if (amount1.value == "") {
+            this.amount = 0;
+        } else {
+            amount = parseInt(amount1.value);
+        }
+        amount1.value = "";
+    }
+    Account.deposit = function () {//예금
+
+        regist();
+        if (Account.number == document.getElementById("accountnumber").value) {
+            // document.getElementById("result").innerHTML= "잔액 : "+this.balance;
+            this.balance += amount;
+            console.log(this.balance);
+            document.getElementById("result").innerHTML = this.balance+"원";
+            removeImage();
+        } else {
+            document.getElementById("result").innerHTML = "계좌번호확인";
+            inputImage();
+
+        }
+    }
+    Account.withdraw = function () {//출금
+        regist();
+        if (Account.number == document.getElementById("accountnumber").value) {
+            // document.getElementById("result").innerHTML= "잔액 : "+this.balance;
+            if (this.balance >= amount) {
+                this.balance -= amount;
+                document.getElementById("result").innerHTML = this.balance+"원";
+                removeImage();
+            } else {
+                document.getElementById("result").innerHTML = "잔액이 부족 합니다.";
+                removeImage();
+            }
+
+        } else {
+            document.getElementById("result").innerHTML = "계좌번호확인";
+            inputImage();
+
+        }
+    }
+
+    Account.toString = function () {
+        if (Account.number == document.getElementById("accountnumber").value) {
+            document.getElementById("result").innerHTML = "잔액 : " + this.balance+"원";
+            removeImage();
+
+        } else {
+            document.getElementById("result").innerHTML = "계좌번호확인";
+            inputImage();
+        }
+    }
+
+    function inputImage(){
+   
+    document.getElementById("image1").src="오구고장.png";
+    }
+    function removeImage(){
+        document.getElementById("image1").src="";
+    }
+</script>
+
+</html>

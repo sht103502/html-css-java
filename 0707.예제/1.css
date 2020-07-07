@@ -1,0 +1,25 @@
+div{
+    border: 10px solid lightpink;
+    width: 70%;
+    height: 800px;
+}
+.number {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid black;
+    float: left;
+    margin: 2px;
+    text-emphasis: center;
+
+}
+
+fieldset {
+
+    width: 450px;
+    background-color: lightgreen;
+}
+
+h2 {
+    font-size: 100px;
+}
